@@ -1,0 +1,63 @@
+/* ./src/components/InstagramFeed.module.css */
+
+.container {
+  padding: 4rem 2rem;
+  background-color: #f9fafb;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #161615;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 3rem;
+}
+
+.subtitle a {
+  color: #CC8A40;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.subtitle a:hover {
+  opacity: 0.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ALTERAÇÃO: A classe post agora é o próprio placeholder. */
+.post {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  border: 2px dashed #d1d5db;
+  color: #9ca3af;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.post:hover {
+  border-color: #DBCA82;
+  color: #161615;
+}

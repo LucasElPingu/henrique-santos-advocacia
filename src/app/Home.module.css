@@ -1,0 +1,5 @@
+.decorativeSectionDivider {
+  height: 6px;
+  background: linear-gradient(270deg, #c9b775, #DBCA82, #c9b775);
+  box-shadow: inset 0px 2px 4px rgba(0,0,0,0.1);
+}

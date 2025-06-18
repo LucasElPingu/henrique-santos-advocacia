@@ -1,0 +1,60 @@
+/* ./src/components/AboutUs.module.css */
+
+.container {
+  padding: 4rem 2rem;
+  /* ALTERAÇÃO: A cor de fundo foi atualizada para o tom de bege acinzentado. */
+  background-color: #8A817C;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.textColumn {
+  padding-right: 2rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #161615;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* Linha dourada decorativa abaixo do título */
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background-color: #DBCA82;
+}
+
+.text {
+  color: #000000;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.imageColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  background-image: "/images/aboutus.jpg";
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}

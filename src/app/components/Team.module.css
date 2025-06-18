@@ -1,0 +1,152 @@
+/* ./src/components/Team.module.css */
+
+.container {
+  padding: 4rem 2rem;
+  background-color: #FFFFFF;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #161615;
+  margin-bottom: 3rem;
+}
+
+.contentWrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 300px;
+  transition: all 0.5s ease-in-out;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  animation: smoothTransition 0.6s ease-in-out;
+}
+
+.card {
+  text-align: center;
+  padding: 1rem;
+}
+
+.imageContainer {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 4px solid #DBCA82;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imageContainer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.memberName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #161615;
+  margin-bottom: 0.25rem;
+}
+
+.memberPosition {
+  color: #CC8A40;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.detailsView {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+  animation: smoothTransition 0.6s ease-in-out;
+}
+
+.detailsNameContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.detailsName {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #161615;
+}
+
+.socialIcon {
+  font-size: 1.75rem;
+  color: #161615;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: #E1306C;
+  transform: scale(1.1);
+}
+
+
+.detailsPosition {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #CC8A40;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #DBCA82;
+  padding-bottom: 1rem;
+}
+
+.detailsBio {
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+/* ALTERAÇÃO: O estilo de placeholder foi substituído por um container de imagem real. */
+.detailsImageContainer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 0.5rem;
+  overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.backButtonContainer {
+  margin-top: 2rem;
+}
+
+.backButton {
+  background: none;
+  border: 1px solid #161615;
+  color: #161615;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.backButton:hover {
+  background-color: #161615;
+  color: #FFFFFF;
+}
+
+@keyframes smoothTransition {
+  from {
+    opacity: 0;
+    transform: translateY(5px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

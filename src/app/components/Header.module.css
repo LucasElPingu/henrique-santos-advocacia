@@ -1,0 +1,145 @@
+/* ./src/components/Header.module.css */
+
+.header {
+  background-color: #FFFFFF;
+  width: 100%;
+  padding-bottom: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding-top: 7px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logoImageContainer {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.logoTextContainer {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logoTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #161615;
+  transition: color 0.3s ease;
+}
+
+.logoSubtitle {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #161615;
+  letter-spacing: 0.025em;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.logo:hover .logoTitle,
+.logo:hover .logoSubtitle {
+  color: #CC8A40;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  gap: 2rem;
+}
+
+/* ALTERAÇÃO: Estilos resetados para que o botão pareça um link de texto. */
+.link {
+  /* Reset da aparência de botão */
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit; /* Usa a mesma fonte do resto do site */
+  cursor: pointer;
+
+  /* Estilos de texto para o link */
+  color: #4b5563;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+ color: #161615;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #CC8A40;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.separator {
+  width: 3px;
+  height: 2rem;
+  background-color: #DBCA82;
+  border-radius: 1px;
+}
+
+.ctaButton {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 2px solid #161615;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #161615;
+  color: #FFFFFF;
+}

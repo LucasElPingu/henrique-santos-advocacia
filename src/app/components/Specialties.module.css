@@ -1,0 +1,124 @@
+/* ./src/components/Specialties.module.css */
+
+.container {
+  padding: 4rem 2rem;
+  background-color: #EAEAEA;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #161615;
+  margin-bottom: 3rem;
+}
+
+.contentWrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 250px; 
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  animation: gentleFadeIn 0.8s ease-out;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 2px solid #d1d5db;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex; /* Adicionado para centralizar verticalmente */
+  flex-direction: column; /* Adicionado para alinhar itens */
+  justify-content: center; /* Adicionado para centralizar verticalmente */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border-color: #DBCA82;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #161615;
+}
+
+.cardIcon {
+  font-size: 1.1rem;
+  color: #CC8A40;
+}
+
+.detailsView {
+  padding: 2rem;
+  border: 1px solid #DBCA82;
+  border-radius: 0.5rem;
+  background-color: #fafafa;
+  max-height: 350px;
+  overflow-y: auto;
+  animation: gentleFadeIn 0.8s ease-out;
+}
+
+.detailsTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #DBCA82;
+  padding-bottom: 1rem;
+}
+
+.detailsTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #161615;
+}
+
+.backButton {
+  background: none;
+  border: 1px solid #161615;
+  color: #161615;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.backButton:hover {
+  background-color: #161615;
+  color: #FFFFFF;
+}
+
+.detailsDescription {
+  color: #4b5563;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+@keyframes gentleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

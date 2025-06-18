@@ -1,0 +1,21 @@
+/* ./src/components/Banner.module.css */
+
+.bannerContainer {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-end;
+  
+  /* Altura diminuída, como solicitado anteriormente. */
+  min-height: 70vh;
+  max-height: 100vh;
+
+  /* Espaçamento para afastar o formulário da borda direita. */
+  padding: 2rem 4rem; 
+  
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/banner.png');
+  background-size: cover;
+  background-position: center;
+
+  /* A propriedade 'width' foi removida. O elemento irá ocupar 100% do espaço
+     disponível por padrão, sem causar overflow graças ao box-sizing. */
+}

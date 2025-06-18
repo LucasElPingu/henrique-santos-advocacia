@@ -1,0 +1,49 @@
+/* ./src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f9fafb;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* NOVO: Classe para o efeito de fade-in na entrada do site */
+.fade-in-section {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* NOVO: Estilo mais sofisticado para a barra divisória.
+   Usa um gradiente dourado e uma sombra interna para dar profundidade. */
+.decorative-divider {
+  height: 6px;
+  background: linear-gradient(270deg, #c9b775, #DBCA82, #c9b775);
+  box-shadow: inset 0px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Animação que controla o fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

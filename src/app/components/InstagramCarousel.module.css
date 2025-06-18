@@ -1,0 +1,80 @@
+/* ./src/components/InstagramCarousel.module.css */
+
+.container {
+  padding: 4rem 2rem;
+  background-color: #f9fafb;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: #161615;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 3rem;
+}
+
+.subtitle a {
+  color: #CC8A40;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.subtitle a:hover {
+  opacity: 0.8;
+}
+
+.carouselWrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.carouselCard {
+  padding: 0 0.75rem;
+  outline: none;
+  border: none;
+}
+
+.post {
+  display: block;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.post:hover .postImage {
+  transform: scale(1.05);
+}
+
+.descriptionBox {
+  background-color: #FFFFFF;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  min-height: 90px;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.descriptionText {
+  color:black;
+}
