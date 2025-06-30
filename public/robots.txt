@@ -1,0 +1,6 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://henriquesantosadvocacia.com.br

@@ -10,7 +10,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 const teamData = [
   { 
     name: 'Dr. Henrique Santos', 
-    position: 'Advogado Sócio-Fundador',
+    position: 'Advogado Fundador',
     bio: 'Advogado, pós-graduado em Direito do Trabalho e Direito Civil, com experiência comprovada nas áreas de direito do trabalho, direito do consumidor, direito previdenciário, direito de família, direito tributário, entre outras áreas do direito.',
     instagramUrl: 'https://www.instagram.com/henriquesantos.advogado/',
     imageUrl: '/images/henrique.jpg'
@@ -37,7 +37,7 @@ export function Team() {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>Conheça a Nossa Equipa</h2>
+      <h2 className={styles.title}>Conheça a Nossa Equipe</h2>
 
       <div className={styles.contentWrapper}>
         {selectedMember ? (

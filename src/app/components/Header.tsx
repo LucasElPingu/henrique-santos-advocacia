@@ -1,26 +1,34 @@
 // ./src/components/Header.tsx
-'use client'; 
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from './Header.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
-import { ContactModal } from './ContactModal';
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./Header.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
+import { ContactModal } from "./ContactModal";
+import { useRouter } from 'next/navigation';
 
 const navLinks = [
-  { name: 'O escritório', targetId: 'about-us' },
-  { name: 'Áreas de atuação', targetId: 'specialties' },
+  { name: "Áreas de atuação", targetId: "specialties" },
+  { name: "Sobre Nós", targetId: "about-us" },
 ];
+
+
 
 export function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/escritorios');
+  };
 
   const handleScroll = (targetId: string) => {
     const element = document.getElementById(targetId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -40,7 +48,9 @@ export function Header() {
             </div>
             <div className={styles.logoTextContainer}>
               <span className={styles.logoTitle}>Henrique Santos</span>
-              <span className={styles.logoSubtitle}>Advocacia e Consultoria</span>
+              <span className={styles.logoSubtitle}>
+                Advocacia e Consultoria
+              </span>
             </div>
           </Link>
 
@@ -48,17 +58,26 @@ export function Header() {
             <div className={styles.navLinks}>
               {navLinks.map((link) => (
                 <React.Fragment key={link.name}>
-                  <button onClick={() => handleScroll(link.targetId)} className={styles.link}>
+                  <button
+                    onClick={() => handleScroll(link.targetId)}
+                    className={styles.link}
+                  >
                     {link.name}
                   </button>
                   <div className={styles.separator} />
                 </React.Fragment>
               ))}
-              <button onClick={() => setIsModalOpen(true)} className={styles.link}>
+              <button className={styles.link}
+              onClick={handleClick}>Os escritórios</button>
+              <div className={styles.separator} />
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className={styles.link}
+              >
                 Fale Conosco
               </button>
             </div>
-            
+
             <Link href="/" className={styles.ctaButton}>
               <FontAwesomeIcon icon={faPhoneVolume} />
               <span>+55 (83) 9 8199-1912</span>
@@ -66,7 +85,10 @@ export function Header() {
           </div>
         </nav>
       </header>
-      <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </>
   );
 }

@@ -93,7 +93,7 @@ export function InstagramCarousel() {
     <section className={styles.container}>
       <h2 className={styles.title}>Publicações Recentes</h2>
       <p className={styles.subtitle}>
-        Acompanhe nosso Instagram <a href="https://www.instagram.com/henriquesantosadvocacia/" target="_blank" rel="noopener noreferrer">@henriquesantosadvocacia</a>
+        Acompanhe nosso Instagram <a href="https://www.instagram.com/henriquesantos.advogado/" target="_blank" rel="noopener noreferrer">@henriquesantosadvocacia</a>
       </p>
       <div className={styles.carouselWrapper}>
         <Slider {...settings}>

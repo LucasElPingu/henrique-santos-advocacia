@@ -1,5 +1,42 @@
+/* src/app/Home.module.css */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .decorativeSectionDivider {
   height: 6px;
   background: linear-gradient(270deg, #c9b775, #DBCA82, #c9b775);
-  box-shadow: inset 0px 2px 4px rgba(0,0,0,0.1);
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.fadeIn {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+.fadeInDelay1 {
+  animation-delay: 0.2s;
+}
+
+.fadeInDelay2 {
+  animation-delay: 0.4s;
+}
+
+.fadeInDelay3 {
+  animation-delay: 0.6s;
+}
+
+.fadeInDelay4 {
+  animation-delay: 0.8s;
 }

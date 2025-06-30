@@ -12,6 +12,7 @@ import styles from './Home.module.css';
 export default function HomePage() {
   return (
     <>
+    <div className={styles.fadeIn}>
       <Banner />
       <div className={styles.decorativeSectionDivider} />
       <Specialties />
@@ -20,6 +21,7 @@ export default function HomePage() {
       <Team />
       <InstagramCarousel />
       <Footer />
+      </div>
     </>
   );
 }
