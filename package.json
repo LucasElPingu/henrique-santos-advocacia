@@ -15,12 +15,14 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "fix-react2shell-next": "^1.1.4",
     "next": "15.3.2",
     "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tool": "^21.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
