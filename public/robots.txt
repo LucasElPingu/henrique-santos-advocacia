@@ -4,3 +4,6 @@ Allow: /
 
 # Host
 Host: https://henriquesantosadvocacia.com.br
+
+# Sitemaps
+Sitemap: https://henriquesantosadvocacia.com.br/sitemap.xml

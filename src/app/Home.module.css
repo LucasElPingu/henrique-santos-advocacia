@@ -11,32 +11,79 @@
   }
 }
 
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
 .decorativeSectionDivider {
   height: 6px;
   background: linear-gradient(270deg, #c9b775, #DBCA82, #c9b775);
-  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 1s ease forwards;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 2px 8px rgba(219, 202, 130, 0.2);
+  animation: fadeInUp 0.8s ease forwards;
   animation-delay: 0.3s;
   opacity: 0;
+  transition: box-shadow 0.4s ease;
+}
+
+.decorativeSectionDivider:hover {
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 12px rgba(219, 202, 130, 0.35);
 }
 
 .fadeIn {
-  animation: fadeInUp 1s ease forwards;
+  animation: fadeInUp 0.9s ease-out forwards;
   opacity: 0;
 }
 
 .fadeInDelay1 {
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 .fadeInDelay2 {
-  animation-delay: 0.4s;
+  animation-delay: 0.25s;
 }
 
 .fadeInDelay3 {
-  animation-delay: 0.6s;
+  animation-delay: 0.4s;
 }
 
 .fadeInDelay4 {
-  animation-delay: 0.8s;
+  animation-delay: 0.55s;
 }

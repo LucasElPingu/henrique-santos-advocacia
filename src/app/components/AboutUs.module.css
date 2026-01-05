@@ -1,8 +1,38 @@
 /* ./src/components/AboutUs.module.css */
 
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80px;
+  }
+}
+
 .container {
   padding: 4rem 2rem;
-  /* ALTERAÇÃO: A cor de fundo foi atualizada para o tom de bege acinzentado. */
   background-color: #8A817C;
 }
 
@@ -17,6 +47,7 @@
 
 .textColumn {
   padding-right: 2rem;
+  animation: slideInFromLeft 0.7s ease-out;
 }
 
 .title {
@@ -26,29 +57,54 @@
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 1rem;
+  animation: slideInDown 0.6s ease-out;
 }
 
-/* Linha dourada decorativa abaixo do título */
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .title::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 80px;
   height: 4px;
   background-color: #DBCA82;
+  animation: expandLine 0.6s ease-out 0.3s forwards;
+  width: 0;
 }
 
 .text {
   color: #000000;
   line-height: 1.8;
   font-size: 1.1rem;
+  animation: fadeInText 0.6s ease-out 0.2s backwards;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .imageColumn {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: slideInFromRight 0.7s ease-out;
 }
 
 .image {
@@ -57,4 +113,11 @@
   height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  transform: scale(1);
+}
+
+.image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px -8px rgba(0, 0, 0, 0.2), 0 12px 15px -8px rgba(0, 0, 0, 0.1);
 }

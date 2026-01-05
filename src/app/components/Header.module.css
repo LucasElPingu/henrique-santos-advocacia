@@ -1,14 +1,31 @@
 /* ./src/components/Header.module.css */
 
+@keyframes headerSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .header {
   background-color: #FFFFFF;
   width: 100%;
   padding-bottom: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
   z-index: 50;
   padding-top: 7px;
+  animation: headerSlideDown 0.5s ease-out;
+  transition: box-shadow 0.3s ease;
+}
+
+.header:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .nav {
@@ -136,10 +153,29 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #161615;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+  z-index: -1;
 }
 
 .ctaButton:hover {
-  background-color: #161615;
   color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(22, 22, 21, 0.2);
+}
+
+.ctaButton:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
