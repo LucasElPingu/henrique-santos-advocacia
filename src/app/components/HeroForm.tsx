@@ -1,5 +1,5 @@
 // ./src/components/HeroForm.tsx
-'use client'; 
+'use client';
 
 import React, { useState } from 'react';
 import styles from './HeroForm.module.css';
@@ -12,34 +12,45 @@ export function HeroForm() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [formStatus, setFormStatus] = useState({ submitted: false, success: false, message: '' });
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    setIsLoading(true);
 
-    const formData = {
-      name,
-      email,
-      phone,
-      message,
-    };
-
-    // Lê o URL do endpoint a partir das variáveis de ambiente
     const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
 
     if (!endpoint) {
       console.error("Formspree endpoint URL is not defined.");
       setFormStatus({ submitted: true, success: false, message: 'Erro de configuração do formulário.' });
+      setIsLoading(false);
       return;
     }
+
+    if (!name.trim() || !email.trim() || !phone.trim() || !message.trim()) {
+      setFormStatus({ submitted: true, success: false, message: 'Por favor, preencha todos os campos.' });
+      setIsLoading(false);
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setFormStatus({ submitted: true, success: false, message: 'Por favor, insira um e-mail válido.' });
+      setIsLoading(false);
+      return;
+    }
+
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', name.trim());
+    formDataToSend.append('email', email.trim());
+    formDataToSend.append('phone', phone.trim());
+    formDataToSend.append('message', message.trim());
 
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataToSend,
       });
 
       if (response.ok) {
@@ -49,11 +60,24 @@ export function HeroForm() {
         setPhone('');
         setMessage('');
       } else {
-        setFormStatus({ submitted: true, success: false, message: 'Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.' });
+        let errorMsg = 'Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.';
+        try {
+          const responseData = await response.json();
+          if (responseData?.error) {
+            errorMsg = responseData.error;
+          }
+        } catch {
+          errorMsg = `Erro ${response.status}: ${response.statusText}`;
+        }
+        setFormStatus({ submitted: true, success: false, message: errorMsg });
+        console.error('Formspree error:', response.status, response.statusText);
       }
     } catch (error) {
       console.error('Erro ao enviar o formulário:', error);
-      setFormStatus({ submitted: true, success: false, message: 'Ocorreu um erro de rede. Verifique a sua conexão.' });
+      const errorMessage = error instanceof Error ? error.message : 'Erro desconhecido';
+      setFormStatus({ submitted: true, success: false, message: `Erro de rede: ${errorMessage}` });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -84,8 +108,8 @@ export function HeroForm() {
         <textarea placeholder="Digite sua mensagem aqui..." className={`${styles.input} ${styles.textarea}`} value={message} onChange={(e) => setMessage(e.target.value)} required></textarea>
       </div>
       
-      <button type="submit" className={styles.submitButton}>
-        Solicitar Contato
+      <button type="submit" className={styles.submitButton} disabled={isLoading}>
+        {isLoading ? 'Enviando...' : 'Solicitar Contato'}
       </button>
 
       {formStatus.submitted && (

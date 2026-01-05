@@ -181,6 +181,13 @@
   box-shadow: 0 2px 8px rgba(204, 138, 64, 0.2);
 }
 
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #a56e33;
+  transform: none;
+}
+
 @keyframes messageSlide {
   0% {
     opacity: 0;
