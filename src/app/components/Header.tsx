@@ -1,14 +1,14 @@
 // ./src/components/Header.tsx
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./Header.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
-import { ContactModal } from "./ContactModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from 'next/navigation';
+import React, { useState } from "react";
+import { ContactModal } from "./ContactModal";
+import styles from "./Header.module.css";
 
 const navLinks = [
   { name: "Áreas de atuação", targetId: "specialties" },
@@ -78,7 +78,7 @@ export function Header() {
               </button>
             </div>
 
-            <Link href="/" className={styles.ctaButton}>
+            <Link href="https://api.whatsapp.com/send/?phone=8381991912&text&type=phone_number&app_absent=0"  target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
               <FontAwesomeIcon icon={faPhoneVolume} />
               <span>+55 (83) 9 8199-1912</span>
             </Link>

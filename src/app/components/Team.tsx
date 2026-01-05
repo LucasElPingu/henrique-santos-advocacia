@@ -1,11 +1,11 @@
 // ./src/components/Team.tsx
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import styles from './Team.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
+import { useState } from 'react';
+import styles from './Team.module.css';
 
 const teamData = [
   { 
@@ -15,20 +15,6 @@ const teamData = [
     instagramUrl: 'https://www.instagram.com/henriquesantos.advogado/',
     imageUrl: '/images/henrique.jpg'
   },
-  { 
-    name: 'Dr. Hugo Pedrosa de Souza', 
-    position: 'Advogado Co-Fundador',
-    bio: 'Assessor Jurídico da Procuradoria Setorial da Secretaria da Administração de João Pessoa, advogado com experiência comprovada nas áreas de direito do consumidor, direito civil, direito de família, direito empresarial, entre outras áreas de direito privado.',
-    instagramUrl: 'https://www.instagram.com/hugopedrosa.adv/',
-    imageUrl: '/images/hugo.jpg'
-  },
-  { 
-    name: 'Dr. Matheus Maia', 
-    position: 'Advogado Associado',
-    bio: 'Especialista em Processo Penal e Direito Penal, com dedicação à defesa dos direitos e garantias individuais em todas as esferas da justiça criminal. A sua prática combina profundo conhecimento técnico com uma atuação combativa e estratégica.',
-    instagramUrl: 'https://www.instagram.com/drmatheusmaia_/',
-    imageUrl: '/images/matheus.jpg'
-  }
 ];
 
 export function Team() {
